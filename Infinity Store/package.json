@@ -1,0 +1,17 @@
+{
+  "name": "the-infinity-store",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace @infinity/web run dev",
+    "dev:api": "npm --workspace @infinity/api run dev",
+    "build": "npm --workspace @infinity/shared run build && npm --workspace @infinity/api run build && npm --workspace @infinity/web run build",
+    "lint": "npm --workspace @infinity/web run lint",
+    "prisma:generate": "npx prisma generate --schema prisma/schema.prisma",
+    "prisma:migrate": "npx prisma migrate dev --schema prisma/schema.prisma"
+  }
+}
